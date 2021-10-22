@@ -5,10 +5,17 @@ The goal is to make it easy for a user to play desired chords in real-time, and 
 
 There is some work ahead to make this code organized the right way.
 
+<h2>Sound production</h2>
+This is being made as a C++ application on a Windows machine. In order to get a start producing sounds, this project will be building off of a simple C++ synthesizer by GitHub account OneLoneCoder: https://github.com/OneLoneCoder/synth
+. This synthesizer has enough implemented to enable the user to play certain notes and have them sound out by the machine. This is extremely helpful as a jumping-off point, but there are plans to restructure some code for this project to allow for certain features:
+
+<h4>---> Envelope data structure, that doesn't just adhere to the ADSR standard</h4>
+See the README for the byoi-cheapinstrument repository for more explanation.
+
 <h2>TO GET: a music theory library</h2>
 There are certain music theory concepts that will be referred to often, and all parts of this code should have a shared, simple way to refer to them. For this reason, the current plan is to either find or make a library of music theory concepts. This library should contain classes that may abstractly represent the following things:
 
-<h3>Baseline concept: notes</h3>
+<h4>---> Baseline concept: notes</h4>
 Chords are made up of notes, so notes should be built before chords are built. For this project, this app's idea of a "note" should mark the following concepts:
 <br>
 <br>
@@ -20,9 +27,9 @@ Chords are made up of notes, so notes should be built before chords are built. F
   <li>NOT to be represented in this area of code: ...The waveform of a note -- this library won't be concerned with that.</li>
   <li>NOT to be represented in this area of code: ...To be implemented later down the line, but a by-the-measure time layout of notes could be helpful at some point. This could include time signatures, tempo, and notes contained in each time measure. Additional bells and whistles could be fermata, ritardando, accelerando, etc.</li>
   <li>NOT to be represented in this area of code: ...As an optional attribute for a note, approximate loudness could be represented: ppp, pp, p, mp, m, mf, f, ff, fff. Combining this concept with the previous bullet point, crescendos and decrescendos could be implemented.</li>
-  <li>TRY TO ALLOW FOR: 
+  <li>TRY TO ALLOW FOR: Semitones
 </ul>
-<h3>Building up: chords</h3>
+<h4>---> Building up: chords</h4>
 The goal of the app is to play chords, so a chord should represent the following:
 <br>
 <br>
