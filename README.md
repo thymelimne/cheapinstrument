@@ -17,8 +17,16 @@ Chords are made up of notes, so notes should be built before chords are built. F
   <li>The common tuning for the standard Western twelve-tone scale (middle C is usually ~621.63Hz)</li>
   <li>The relationship between notes in a twelve-tone scale, with regards to the variation in frequency (frequency, a.k.a. pitch)</li>
   <li>The octave of each note</li>
-  <li>NOT to represent the waveform of a note -- this library won't be concerned with that.</li>
-  <li>To be implemented later down the line, but a by-the-measure time layout of notes could be helpful at some point. This could include time signatures, tempo, and notes contained in each time measure. Additional bells and whistles could be fermata, ritardando, accelerando, etc.</li>
-  <li>As an optional attribute for a note, approximate loudness could be represented: ppp, pp, p, mp, m, mf, f, ff, fff. Combining this concept with the previous bullet point, crescendos and decrescendos could be implemented.</li>
+  <li>NOT to be represented in this area of code: ...The waveform of a note -- this library won't be concerned with that.</li>
+  <li>NOT to be represented in this area of code: ...To be implemented later down the line, but a by-the-measure time layout of notes could be helpful at some point. This could include time signatures, tempo, and notes contained in each time measure. Additional bells and whistles could be fermata, ritardando, accelerando, etc.</li>
+  <li>NOT to be represented in this area of code: ...As an optional attribute for a note, approximate loudness could be represented: ppp, pp, p, mp, m, mf, f, ff, fff. Combining this concept with the previous bullet point, crescendos and decrescendos could be implemented.</li>
+  <li>TRY TO ALLOW FOR: 
 </ul>
 <h3>Building up: chords</h3>
+The goal of the app is to play chords, so a chord should represent the following:
+<br>
+<br>
+<ul>
+  <li>Root note of the chord (root note, a.k.a. 'tonic', or 'base')</li>
+  <li>Whether the chord is major, minor, aug, dim, etc.. a.k.a, the chord's 'quality'.</li>
+</ul>
