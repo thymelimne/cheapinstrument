@@ -12,28 +12,18 @@ This is being made as a C++ application on a Windows machine. In order to get a 
 <h4>---> Envelope data structure, that doesn't just adhere to the ADSR standard</h4>
 See the README for the byoi-cheapinstrument repository for more explanation.
 
-<h2>TO GET: a music theory library</h2>
-There are certain music theory concepts that will be referred to often, and all parts of this code should have a shared, simple way to refer to them. For this reason, the current plan is to either find or make a library of music theory concepts. This library should contain classes that may abstractly represent the following things:
+<h2>Representing chords</h2>
+Chord notations can be represented with a single integer - Cuius rei demonstrationem mirabilem sane detexi; hanc marginis exiguitas non caperet...
 
-<h4>---> Baseline concept: notes</h4>
-Chords are made up of notes, so notes should be built before chords are built. For this project, this app's idea of a "note" should mark the following concepts:
-<br>
-<br>
-<ul>
-  <li>The twelve tones of a common musical scale, and the cyclical nature</li>
-  <li>The common tuning for the standard Western twelve-tone scale (middle C is usually ~621.63Hz)</li>
-  <li>The relationship between notes in a twelve-tone scale, with regards to the variation in frequency (frequency, a.k.a. pitch)</li>
-  <li>The octave of each note</li>
-  <li>NOT to be represented in this area of code: ...The waveform of a note -- this library won't be concerned with that.</li>
-  <li>NOT to be represented in this area of code: ...To be implemented later down the line, but a by-the-measure time layout of notes could be helpful at some point. This could include time signatures, tempo, and notes contained in each time measure. Additional bells and whistles could be fermata, ritardando, accelerando, etc.</li>
-  <li>NOT to be represented in this area of code: ...As an optional attribute for a note, approximate loudness could be represented: ppp, pp, p, mp, m, mf, f, ff, fff. Combining this concept with the previous bullet point, crescendos and decrescendos could be implemented.</li>
-  <li>TRY TO ALLOW FOR: Semitones
-</ul>
-<h4>---> Building up: chords</h4>
-The goal of the app is to play chords, so a chord should represent the following:
-<br>
-<br>
-<ul>
-  <li>Root note of the chord (root note, a.k.a. 'tonic', or 'base')</li>
-  <li>Whether the chord is major, minor, aug, dim, etc.. a.k.a, the chord's 'quality'.</li>
-</ul>
+<h2>Challenge to keep in mind: Tuning the virtual instrument.</h2>
+Most pianos nowadays are tuned with something called "equal temperament" -- That is, with each note having a regular mathematical relationship with the next note. Figuring out the frequency of any note on a piano tuned to equal temparement is simple:
+
+<br>Middle A is usually 440Hz, though this isn't quite as important as the next statement...<br>
+<br>Frequency of a new note = 2 ^ ((amount of notes upward from the original note) / 12)<br>
+
+<br>However, there are other tuning methods as well. There's well temperament, in which the note frequencies are slightly irregularly altered from equal temperament, so as to make certain specific major thirds ring out more nicely. There's also pythagorean tuning, and other tuning methods as well.<br>
+
+<br>This project might end up using an array as an imaginary tuned piano; It'll calculate the frequencies at the beginning of the program's runtime, according to which tuning rules are desired for this runtime, and then as each note gets played, the program will use this table to look them up. This would hopefully accomplish two things: Firstly, it'll hopefully pare down runtime by not requiring the frequency calculation be done for each note. Secondly, it would make it very easy to construct new tuning systems in the future, by adding modifications to an array as opposed to coming up with mathematical rules to code into new functions.
+
+<h2>NES sounds</h2>
+The way sound channels worked on the NES game console and the Commodore 64 gaming computer are fairly interesting. There may come more explanation here on how it worked, if it's found to be relevant enough to this project... 
