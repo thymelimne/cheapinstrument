@@ -15,15 +15,7 @@ See the README for the byoi-cheapinstrument repository for more explanation.
 <h2>Representing chords</h2>
 Chord notations can be represented with a single integer - Cuius rei demonstrationem mirabilem sane detexi; hanc marginis exiguitas non caperet...
 
-<h2>Challenge to keep in mind: Tuning the virtual instrument.</h2>
-Most pianos nowadays are tuned with something called "equal temperament" -- That is, with each note having a regular mathematical relationship with the next note. Figuring out the frequency of any note on a piano tuned to equal temparement is simple:
-
-<br>Middle A is usually 440Hz, though this isn't quite as important as the next statement...<br>
-<br>Frequency of a new note = 2 ^ ((amount of notes upward from the original note) / 12)<br>
-
-<br>However, there are other tuning methods as well. There's well temperament, in which the note frequencies are slightly irregularly altered from equal temperament, so as to make certain specific major thirds ring out more nicely. There's also pythagorean tuning, and other tuning methods as well.<br>
-
-<br>This project might end up using an array as an imaginary tuned piano; It'll calculate the frequencies at the beginning of the program's runtime, according to which tuning rules are desired for this runtime, and then as each note gets played, the program will use this table to look them up. This would hopefully accomplish two things: Firstly, it'll hopefully pare down runtime by not requiring the frequency calculation be done for each note. Secondly, it would make it very easy to construct new tuning systems in the future, by adding modifications to an array as opposed to coming up with mathematical rules to code into new functions.
-
-<h2>NES sounds</h2>
-The way sound channels worked on the NES game console and the Commodore 64 gaming computer are fairly interesting. There may come more explanation here on how it worked, if it's found to be relevant enough to this project... 
+<h2>Additive vs. Subtractive Synthesis</h2>
+As it seems, the goal of music synthesis is to create a sound output. Let's visualize this as a single squiggle: the wave of sound that changes itself along the duration of playtime.
+![image](https://user-images.githubusercontent.com/91765107/145726739-2ad5d316-e2ea-4f9f-a1fc-9b6e951899c0.png)
+...
