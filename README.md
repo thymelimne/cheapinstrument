@@ -23,4 +23,8 @@ As it seems, the goal of music synthesis is to create a sound output. Let's visu
 
 Subtractive synthesis is where, instead of compounding enough sine waves to create whatever waveform you want, you have a few different types of waves (triangle wave, pulse wave, saw wave -- waveforms that themselves are already mathematically defined as compounds of sine waves, but are commonly hard-programmed into your synthesizer or computer sound card) that you generate, and then modify using a harmonic filter. Sound engineers generally agree that the filter is where the individual intrigue of the sound's timbre usually lies, because it offers so much variety of sound.
 
-For this project, there's a conceptual question that requires some studying: How do filters actually work? The idea of how they interface with 
+For this project, there's a conceptual question that requires some studying: How do filters actually work? The idea of how they interface with the rest of the syntesizer is neatly explained in plenty of sources that a quick search engine search provides, but only in a general sense. The actual underlying implementation of such filters is seldom explained, and will probably be a bit difficult to wrap one's head around.
+
+Here is what is understood about the question: Those basic aforementioned waveforms -- square, pulse saw -- have certain harmonic frequencies associated with them (as seen in this source: https://help.apple.com/logicpro/mac/9.1.6/en/logicpro/instruments/index.html#chapter=A%26section=3%26tasks=true ), and the filter's job is to cut those harmonic frequencies out.
+
+How exactly do you cut those extra harmonic frequencies? What is the synth's filter doing to the wave such that it ends up successfully removing those harmonies?
