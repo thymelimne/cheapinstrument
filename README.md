@@ -31,4 +31,4 @@ How exactly do you cut those extra harmonic frequencies? What is the synth's fil
 
 Some possible search words / terms to mix together, when looking up this question: harmonic, frequency, filter, synth, synthesizer, cutoff, notch filter, band-stop filter, remove harmonics
 
-Perhaps this documentation has some yarns to follow to answer the question: https://www.mathworks.com/help/predmaint/ug/remove-harmonics.html
+Perhaps this documentation has some yarns to follow to answer the question?: https://www.mathworks.com/help/predmaint/ug/remove-harmonics.html
